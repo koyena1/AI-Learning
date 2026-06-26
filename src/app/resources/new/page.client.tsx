@@ -30,9 +30,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 type ResourceNewFormProps = {
-  initialResourceType?: (typeof getResourceTypeOptions)[number] extends never
-    ? "OTHER"
-    : (typeof getResourceTypeOptions)[number];
+  initialResourceType?: ReturnType<typeof getResourceTypeOptions>[number];
 };
 
 
